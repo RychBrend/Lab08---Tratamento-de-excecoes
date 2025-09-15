@@ -31,7 +31,7 @@ public class ResourceExceptionHandler {
     public ResponseEntity<StandardError> handleGenericException(Exception ex, HttpServletRequest request) {
         String error = "Erro de Serviço";
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        StandardError err = new StandardError(System.currentTimeMillis(), status.value(), error, "An unexpected error occurred", request.getRequestURI());
+        StandardError err = new StandardError(System.currentTimeMillis(), status.value(), error, "Um erro inesperado aconteceu", request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
 }
